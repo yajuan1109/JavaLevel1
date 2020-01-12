@@ -18,10 +18,6 @@ public class DrawImg {
         int xDisp, yDisp;
 
         for (int i = 0; i < width * height; i++) {
-
-//            int rowNum = (int) (rnd.nextDouble() * 100 / 33);
-//            if (rowNum > 2)
-//                rowNum = 2;
         	
         	int rowNumber;	
         	double randomNumber = rnd.nextDouble();
