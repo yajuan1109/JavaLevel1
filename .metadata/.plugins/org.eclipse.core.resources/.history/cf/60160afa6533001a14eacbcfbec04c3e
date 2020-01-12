@@ -1,0 +1,56 @@
+import java.security.SecureRandom;
+
+public class DrawImg {
+
+    private static final int width = 449, height = 519, scale = -500;
+    private static final int xOffset = 439, yOffset = 509;
+
+    static final double values[][] = { { 0.50, 0.00, 0.00, 0.50, 0.00, 0.00, 0.33 },
+            { 0.50, 0.00, 0.00, 0.50, 0.00, 0.50, 0.33 }, { 0.50, 0.00, 0.00, 0.50, 0.43, 0.25, 0.34 }, };
+
+    static int[][] getPonits() {
+    	
+        int points[][] = new int[height][width];
+        SecureRandom rnd = new SecureRandom();
+        double x = 0, y = 0;
+
+        int xDisp, yDisp;
+
+        for (int i = 0; i < width * height; i++) {
+
+            int rowNum = (int) rnd.nextDouble() * 100 / 33;
+System.out.println((int) 0.5 * 100 /33);
+            // // rowValue[i] = randomNumber;
+            // // generate random numbers [0,1)
+            //
+            // if(randomNumber >=0 && randomNumber <0.33) {
+            // rowNum = 0;
+            // } else if (randomNumber>=0.33 && randomNumber <0.66) {
+            // rowNum = 1;
+            // }
+            //
+
+            double[] row = values[rowNum];
+
+            double u = row[0] * x + row[1] * y + row[4];
+            double v = row[2] * x + row[3] * y + row[5];
+            x = u;
+            y = v;
+
+            xDisp = ((int) (Math.floor(x)) * scale + xOffset);
+            yDisp = ((int) (Math.floor(y)) * scale + yOffset);
+
+            points[yDisp][xDisp] += 1;
+        	
+        }
+
+        return points;
+
+    }
+
+    public static void main(String[] args) {
+
+        IfsViewer.view(getPonits());
+    }
+
+}

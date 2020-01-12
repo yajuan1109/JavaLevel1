@@ -1,0 +1,22 @@
+
+
+public class PracticeTest {
+	
+     public static void main(String []args ) {
+    	 
+    	System.out.println("Hello1" + "\r\n1234");
+    	System.out.println("Hello2" + "\n\r1234");
+    	 
+    	
+    	System.out.printf("%f", 39.12345);
+    	
+    	
+    	    
+
+
+         
+            
+             
+ 	}
+   
+}

@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Teacher {
+    private long teacherID;
+    private String teacherName;
+    private double salary, incomeTaxRate, netSalary;
+    private Scanner input;
+    
+    public Teacher() {
+    	teacherID = 11111;
+    	teacherName = "No Name";
+    	salary = 2000;
+    	incomeTaxRate = 5;
+    }
+    
+    
+    
+    
+}

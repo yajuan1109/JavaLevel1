@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;CST8110_week4&apos; to &apos;CST8110_lab3&apos;" description="Rename resource &apos;CST8110_week4&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/CST8110_week4" name="CST8110_lab3" stamp="1572267654324" updateReferences="true"/>
+</session>

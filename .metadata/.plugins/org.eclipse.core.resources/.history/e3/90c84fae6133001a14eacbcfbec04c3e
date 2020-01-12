@@ -1,0 +1,60 @@
+import java.security.SecureRandom;
+
+public class DrawImg {
+
+    double x = 0, y = 0, u, v;
+    int xDisp, yDisp;
+    private static final int width = 449, height = 519, scale = -500;
+    private static final int xOffset = 439, yOffset = 509;
+
+    double values[][] = { { 0.50, 0.00, 0.00, 0.50, 0.00, 0.33 }, { 0.50, 0.00, 0.00, 0.50, 0.50, 0.33 },
+            { 0.50, 0.00, 0.00, 0.43, 0.25, 0.34 }, };
+
+    public int[][] drawIfs() {
+        int points[][] = new int[width][height];
+        SecureRandom rnd = new SecureRandom();
+
+        for (int i = 0; i < width * height; i++) {
+            int rowNum = (int) rnd.nextDouble() * 100 % 33;
+            // // rowValue[i] = randomNumber;
+            // // generate random numbers [0,1)
+            //
+            // if(randomNumber >=0 && randomNumber <0.33) {
+            // rowNum = 0;
+            // } else if (randomNumber>=0.33 && randomNumber <0.66) {
+            // rowNum = 1;
+            // }
+            //
+
+            double[] row = values[rowNum];
+
+            u = row[0] * x + row[1] * y + row[4];
+            v = row[2] * x + row[3] * y + row[5];
+            x = u;
+            y = v;
+            xDisp = ((int) (Math.floor(x)) * scale + xOffset);
+            yDisp = ((int) (Math.floor(y)) * scale + yOffset);
+
+            points[yDisp][xDisp] += 1;
+
+        }
+
+        return points;
+
+    }
+
+    public static void main(String[] args) {
+
+        int width = 100;
+        int height = 100;
+        int[][] points = new int[width][height];
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
+                points[i][j] = i == j ? 1 : 0;
+                System.out.print(points[i][j]);
+            }
+        }
+        IfsViewer.view(points);
+    }
+
+}

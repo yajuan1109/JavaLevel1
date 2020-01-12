@@ -1,0 +1,20 @@
+
+
+public class PracticeTest {
+	
+     public static void main(String []args ) {
+    	 
+    	System.out.print("\\1234");
+    	System.out.println("\n 345");
+    	 
+    	
+    	    
+    	    
+
+
+         
+            
+             
+ 	}
+   
+}
